@@ -1,0 +1,11 @@
+[package]
+
+name = "quadpass"
+version = "0.1.0"
+entrypoint = "quadpass.typ"
+authors = ["@Neruthes"]
+license = "MIT"
+description = "Fake terminal"
+repository = "https://github.com/neruthes/typstpkg-quadpass"
+keywords = ["Terminal", "Shell"]
+categories = ["utility"]
