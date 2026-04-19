@@ -32,13 +32,13 @@
 
 #let __show_heading(font: auto, spacing_ratio: 100%) = {
   return it => {
-    v(spacing_ratio * 13mm * (9 - it.depth) / 9, weak: true)
+    v(spacing_ratio * 140% * 16mm * (9 - it.depth) / 9, weak: true)
     if font == auto {
       text(fill: black, stroke: 0.0em, weight: 500, it)
     } else {
       text(fill: black, font: __fonts_release_big, stroke: 0.0em, it)
     }
-    v(spacing_ratio * 10mm * (9 - it.depth) / 9, weak: true)
+    v(spacing_ratio * 16mm * (9 - it.depth) / 9, weak: true)
   }
 }
 
@@ -54,12 +54,13 @@
   doc
 }
 #let __phase_2_edit(show-header: false, doc) = {
-  set page(margin: 22mm)
-  set text(size: 13pt, font: __fonts_edit, fill: black.transparentize(35%), tracking: 0.017em)
+  set page(margin: 9mm)
+  set text(size: 13pt, font: __fonts_edit, fill: black.transparentize(40%), tracking: 0.017em)
   set smartquote(enabled: false)
-  set par(justify: true, leading: 1em, spacing: 2.3em, first-line-indent: 4em)
+  set par(justify: false, leading: 1em, spacing: 2.3em, first-line-indent: 4em)
+  set heading(numbering: "1.1.1.1.1.1.  ")
   show heading: __show_heading(font: auto)
-  let __styler__first_word(it) = text(fill: black, box(scale(reflow: true, x: 115%, it)))
+  let __styler__first_word(it) = text(fill: black, stroke: 0.012em, box(scale(reflow: true, x: 122%, it)))
   show ". ": ".  "
   show "! ": "!  "
   show "? ": "?  "
@@ -68,8 +69,8 @@
     let m = element.match(regex("([.!?]\s+)(\w+)"))
     {
       m.captures.at(0)
-      linebreak()
-      h(0.0em)
+      // linebreak()
+      h(0.7em, weak: true)
       // sym.section
       // [~~]
       __styler__first_word(m.captures.at(1))

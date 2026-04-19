@@ -14,7 +14,7 @@
   The first phase was draft phase, where the font was monospace and text characters not in the current sentence were dimmed,
   offering good attention guiding.
 
-  Many years later, I no longer use Mac OS X, rarely use Markdown to write serious stuff,
+  Many years later, I no longer use Mac OS X, rarely use Markdown in serious write,
   and hardly edit individual text files without a repository context.
   However, I may have situations where preprint manuscript and final release need to be distinguished in styling.
   And I thought, the manuscript phase requires better readability.
@@ -27,6 +27,10 @@
   and the text is bigger to easily naviagte on a modern monitor.
   Also, the inter-word, inter-sentence, inter-line, and inter-paragraph spacings are increased.
 
+  Phase 2 is the edit phase. The API is #underline[\#show: quadpass.with(phase: 2)].
+  In this phase, the initial word in every sentence is given outstanding visual weight.
+
+
 
 
 
@@ -36,7 +40,7 @@
 ]
 
 
-#quadpass(phase: 1, mydoc)
-// #quadpass(phase: 2, mydoc)
+// #quadpass(phase: 1, mydoc)
+#quadpass(phase: 2, mydoc)
 // #quadpass(phase: 3, mydoc)
 // #quadpass(phase: 4, mydoc)
